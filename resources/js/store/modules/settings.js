@@ -10,7 +10,7 @@ const initialState = {
     user: window.Canvas.user,
     version: window.Canvas.version,
     roles: window.Canvas.roles,
-    quillConfig: JSON.parse(window.Canvas.quill_config)
+    quillConfig: JSON.parse(window.Canvas.quill_config),
 };
 
 const state = { ...initialState };

@@ -115,7 +115,7 @@ import EmbedImageModal from './EmbedImageModal';
 import Parchment from 'parchment';
 import Quill from 'quill';
 import debounce from 'lodash/debounce';
-import settings from "../../store/modules/settings";
+import settings from '../../store/modules/settings';
 
 export default {
     name: 'quill-editor',
