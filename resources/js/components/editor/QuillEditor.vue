@@ -104,7 +104,7 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
+import { mapGetters, mapState } from 'vuex';
 import $ from 'jquery';
 import Closable from '../../../js/directives/Closable';
 import DividerBlot from './DividerBlot';
@@ -115,7 +115,6 @@ import EmbedImageModal from './EmbedImageModal';
 import Parchment from 'parchment';
 import Quill from 'quill';
 import debounce from 'lodash/debounce';
-import settings from '../../store/modules/settings';
 
 export default {
     name: 'quill-editor',
@@ -144,6 +143,7 @@ export default {
     },
 
     computed: {
+        ...mapState(['settings']),
         ...mapGetters({
             trans: 'settings/trans',
         }),
@@ -171,7 +171,7 @@ export default {
             const icons = Quill.import('ui/icons');
             icons.header[3] = require('!html-loader!quill/assets/icons/header-3.svg');
 
-            let quill = new Quill(this.$refs.editor, settings.quillConfig);
+            let quill = new Quill(this.$refs.editor, this.settings.quillConfig);
 
             /**
              * Temporary workaround for customizing the link tooltip.
