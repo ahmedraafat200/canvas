@@ -115,6 +115,7 @@ import EmbedImageModal from './EmbedImageModal';
 import Parchment from 'parchment';
 import Quill from 'quill';
 import debounce from 'lodash/debounce';
+import settings from "../../store/modules/settings";
 
 export default {
     name: 'quill-editor',
@@ -170,19 +171,7 @@ export default {
             const icons = Quill.import('ui/icons');
             icons.header[3] = require('!html-loader!quill/assets/icons/header-3.svg');
 
-            let quill = new Quill(this.$refs.editor, {
-                modules: {
-                    syntax: true,
-                    toolbar: [
-                        ['bold', 'italic', 'code', 'link'],
-                        [{ header: '2' }, { header: '3' }],
-                        ['blockquote', 'code-block'],
-                    ],
-                },
-                theme: 'bubble',
-                scrollingContainer: 'html, body',
-                placeholder: this.trans.tell_your_story,
-            });
+            let quill = new Quill(this.$refs.editor, settings.quillConfig);
 
             /**
              * Temporary workaround for customizing the link tooltip.
