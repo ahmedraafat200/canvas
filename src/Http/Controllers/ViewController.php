@@ -28,6 +28,7 @@ class ViewController extends Controller
                 'unsplash' => config('canvas.unsplash.access_key'),
                 'user' => request()->user('canvas'),
                 'version' => Canvas::installedVersion(),
+                'quill_config' => json_encode(config('canvas.quill_config'))
             ],
         ]);
     }

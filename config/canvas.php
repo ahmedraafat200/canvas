@@ -91,4 +91,18 @@ return [
         'enabled' => env('CANVAS_MAIL_ENABLED', false),
     ],
 
+    'quill_config' => [
+        'modules' => [
+            'syntax' => true,
+            'toolbar' => [
+                ['bold', 'italic', 'code', 'link'],
+                [['header' => '2'], ['header' => '3']],
+                ['blockquote', 'code-block'],
+            ],
+        ],
+        'theme' => 'bubble',
+        'scrollingContainer' => 'html, body',
+        'placeholder' => 'Test Placeholder',
+    ]
+
 ];
