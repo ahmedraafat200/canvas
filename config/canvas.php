@@ -102,7 +102,7 @@ return [
         ],
         'theme' => 'bubble',
         'scrollingContainer' => 'html, body',
-        'placeholder' => 'Test Placeholder',
+        'placeholder' => __('app.tell_your_story'),
     ]
 
 ];
